@@ -10,6 +10,9 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  // Style/lint warnings should never block a deploy (run `npm run lint` locally instead).
+  // TypeScript errors still fail the build.
+  eslint: { ignoreDuringBuilds: true },
   images: {
     // Portfolio media is served through our own /api/media route, which enforces
     // the "published projects only" rule before any byte leaves storage.
